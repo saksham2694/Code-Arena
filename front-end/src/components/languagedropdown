@@ -1,0 +1,41 @@
+import { Menu, Dropdown } from "antd";
+import {DownOutlined} from '@ant-design/icons';
+import React from "react";
+
+const LanguageDropDown = ({ 
+    currLang, setLang
+}) => {
+    const menu = (
+        <Menu>
+            <Menu.Item key={0} onClick={() => setLang('Java')}>
+                Java
+            </Menu.Item>
+            <Menu.Item key={1} onClick={() => setLang('Python')}>
+                Python
+            </Menu.Item>
+            <Menu.Item key={2} onClick={() => setLang('Python')}>
+                Python
+            </Menu.Item>
+        </Menu>);
+    return (
+        <Dropdown overlay={menu} trigger={['click']}>
+            <div
+                style={{
+                    height: '15px',
+                    width: '180px',
+                    padding: '10px',
+                    margin:'5px',
+                    fontWeight: 'bold',
+                    background: 'rgb(33,38,45)',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    cursor: 'pointer',
+                    borderRadius: '5px',
+                }}>{currLang} <DownOutlined/>
+            </div>
+        </Dropdown>
+    )
+};
+
+export default LanguageDropDown;
